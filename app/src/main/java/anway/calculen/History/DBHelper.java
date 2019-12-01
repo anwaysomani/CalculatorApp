@@ -1,4 +1,4 @@
-package anubhav.calculen.History;
+package anway.calculen.History;
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anway.calculen;
 
 import java.util.Iterator;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
@@ -7,7 +7,7 @@ import com.fathzer.soft.javaluator.Parameters;
 
 // A subclass of DoubleEvaluator that supports SQRT function.
 public class ExtendedDoubleEvaluator extends DoubleEvaluator {
-    /** Defines the new function (square root).*/
+    // Defines the new function (square root).
     private static final Function SQRT = new Function("sqrt", 1);
     private static final Function CBRT = new Function("cbrt", 1);
     private static final Function ASIND = new Function("asind", 1);

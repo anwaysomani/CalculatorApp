@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anway.calculen;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

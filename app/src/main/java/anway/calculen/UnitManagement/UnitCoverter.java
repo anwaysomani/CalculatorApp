@@ -1,4 +1,4 @@
-package anubhav.calculen.UnitManagement;
+package anway.calculen.UnitManagement;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import anubhav.calculen.R;
+import anway.calculen.R;
 
 public class UnitCoverter extends AppCompatActivity {
 

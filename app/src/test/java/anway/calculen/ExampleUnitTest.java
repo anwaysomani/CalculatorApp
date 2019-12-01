@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anway.calculen;
 
 import org.junit.Test;
 

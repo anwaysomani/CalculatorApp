@@ -1,4 +1,4 @@
-package anubhav.calculen.UnitManagement;
+package anway.calculen.UnitManagement;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import anubhav.calculen.ConvertingUnits;
-import anubhav.calculen.R;
+import anway.calculen.ConvertingUnits;
+import anway.calculen.R;
 
 public class UnitWeight extends AppCompatActivity {
     private EditText e1,e2;
