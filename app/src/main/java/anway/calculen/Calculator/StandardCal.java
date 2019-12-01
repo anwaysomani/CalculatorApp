@@ -1,4 +1,4 @@
-package anway.calculen;
+package anway.calculen.Calculator;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
+
 import anway.calculen.History.DBHelper;
 import anway.calculen.History.History;
+import anway.calculen.R;
 
 public class StandardCal extends AppCompatActivity {
     private EditText e1,e2;

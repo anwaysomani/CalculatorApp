@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="anway.calculen.ScientificCal">
+    tools:context="anway.calculen.Calculator.ScientificCal">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

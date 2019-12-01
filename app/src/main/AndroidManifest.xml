@@ -19,11 +19,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="anway.calculen.StandardCal"
+            android:name="anway.calculen.Calculator.StandardCal"
             android:label="@string/title_activity_standard_cal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="anway.calculen.ScientificCal"
+            android:name="anway.calculen.Calculator.ScientificCal"
             android:label="@string/title_activity_scientific_cal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

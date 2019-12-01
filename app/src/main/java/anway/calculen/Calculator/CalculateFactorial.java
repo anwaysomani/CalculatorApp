@@ -1,4 +1,4 @@
-package anway.calculen;
+package anway.calculen.Calculator;
 
 public class CalculateFactorial {
     public static final int MAX=1000;
@@ -6,8 +6,7 @@ public class CalculateFactorial {
     private int res_size;
     private int res[]=new int[MAX];
 
-    CalculateFactorial()
-    {
+    public CalculateFactorial() {
         res_size = 1;
     }
 

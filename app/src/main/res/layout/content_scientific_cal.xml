@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="anway.calculen.ScientificCal"
+    tools:context="anway.calculen.Calculator.ScientificCal"
     tools:showIn="@layout/activity_scientific_cal">
 
     <EditText

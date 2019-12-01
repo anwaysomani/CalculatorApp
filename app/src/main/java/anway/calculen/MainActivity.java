@@ -7,6 +7,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import anway.calculen.Calculator.ScientificCal;
+import anway.calculen.Calculator.StandardCal;
 import anway.calculen.UnitManagement.UnitCoverter;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         Intent i;
         if(view.getId()==R.id.button1) {
-            i=new Intent(this,StandardCal.class);
+            i=new Intent(this, StandardCal.class);
             startActivity(i);
         } else if(view.getId()==R.id.button) {
-            i=new Intent(this,ScientificCal.class);
+            i=new Intent(this, ScientificCal.class);
             startActivity(i);
         } else if(view.getId()==R.id.button2) {
             i=new Intent(this, UnitCoverter.class);

@@ -1,4 +1,4 @@
-package anway.calculen;
+package anway.calculen.Calculator;
 
 import java.util.Iterator;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
@@ -26,7 +26,7 @@ public class ExtendedDoubleEvaluator extends DoubleEvaluator {
         PARAMS.add(ATAND);
     }
 
-    ExtendedDoubleEvaluator() {
+    public ExtendedDoubleEvaluator() {
         super(PARAMS);
     }
 
