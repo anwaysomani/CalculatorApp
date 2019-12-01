@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anubhav.calculen.UnitManagement;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import anubhav.calculen.ConvertingUnits;
+import anubhav.calculen.R;
 
 public class UnitLength extends AppCompatActivity {
     private EditText e1,e2;

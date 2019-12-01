@@ -27,27 +27,27 @@
             android:label="@string/title_activity_scientific_cal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="anubhav.calculen.UnitCoverter"
+            android:name="anubhav.calculen.UnitManagement.UnitCoverter"
             android:label="@string/title_activity_unit_coverter"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="anubhav.calculen.UnitArea"
+            android:name="anubhav.calculen.UnitManagement.UnitArea"
             android:label="@string/title_activity_unit_area"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="anubhav.calculen.UnitLength"
+            android:name="anubhav.calculen.UnitManagement.UnitLength"
             android:label="@string/title_activity_unit_length"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="anubhav.calculen.UnitWeight"
+            android:name="anubhav.calculen.UnitManagement.UnitWeight"
             android:label="@string/title_activity_unit_weight"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="anubhav.calculen.UnitTemperature"
+            android:name="anubhav.calculen.UnitManagement.UnitTemperature"
             android:label="@string/title_activity_unit_temperature"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="anubhav.calculen.History"
+            android:name="anubhav.calculen.History.History"
             android:label="@string/title_activity_history"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

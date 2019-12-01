@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import anubhav.calculen.UnitManagement.UnitCoverter;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             i=new Intent(this,ScientificCal.class);
             startActivity(i);
         } else if(view.getId()==R.id.button2) {
-            i=new Intent(this,UnitCoverter.class);
+            i=new Intent(this, UnitCoverter.class);
             startActivity(i);
         }
     }

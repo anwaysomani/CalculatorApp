@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anubhav.calculen.UnitManagement;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,16 +7,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class UnitArea extends AppCompatActivity {
+import anubhav.calculen.ConvertingUnits;
+import anubhav.calculen.R;
+
+public class UnitTemperature extends AppCompatActivity {
     private EditText e1,e2;
     private Spinner s1,s2;
     private int count1=0;
-    private ConvertingUnits.Area ca;
+    private ConvertingUnits.Temperature ca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_unit_area);
+        setContentView(R.layout.activity_unit_temperature);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -25,7 +28,7 @@ public class UnitArea extends AppCompatActivity {
         s1=(Spinner)findViewById(R.id.spinner1);
         s2=(Spinner)findViewById(R.id.spinner2);
 
-        ca=new ConvertingUnits.Area();
+        ca=new ConvertingUnits.Temperature();
     }
 
     public void onClick(View v) {
@@ -33,44 +36,56 @@ public class UnitArea extends AppCompatActivity {
             case R.id.num0:
                 e1.setText(e1.getText()+"0");
                 break;
+
             case R.id.num1:
                 e1.setText(e1.getText()+"1");
                 break;
+
             case R.id.num2:
                 e1.setText(e1.getText()+"2");
                 break;
+
             case R.id.num3:
                 e1.setText(e1.getText()+"3");
                 break;
+
             case R.id.num4:
                 e1.setText(e1.getText()+"4");
                 break;
+
             case R.id.num5:
                 e1.setText(e1.getText()+"5");
                 break;
+
             case R.id.num6:
                 e1.setText(e1.getText()+"6");
                 break;
+
             case R.id.num7:
                 e1.setText(e1.getText()+"7");
                 break;
+
             case R.id.num8:
                 e1.setText(e1.getText()+"8");
                 break;
+
             case R.id.num9:
                 e1.setText(e1.getText()+"9");
                 break;
+
             case R.id.dot:
                 if (count1==0) {
                     e1.setText(e1.getText()+".");
                     count1++;
                 }
                 break;
+
             case R.id.clear:
                 e1.setText("");
                 e2.setText("");
                 count1=0;
                 break;
+
             case R.id.backSpace:
                 if(e1.length()!=0) {
                     String text=e1.getText().toString();
@@ -80,6 +95,7 @@ public class UnitArea extends AppCompatActivity {
                     e1.setText(newText);
                 }
                 break;
+
             case R.id.equal:
                 int item1=s1.getSelectedItemPosition();
                 int item2=s2.getSelectedItemPosition();
@@ -97,40 +113,22 @@ public class UnitArea extends AppCompatActivity {
         else {
             switch (item1) {
                 case 0:
-                    temp=ca.sqMilliToMeter(value);
+                    temp=ca.CelsiTokelvin(value);
                     break;
                 case 1:
-                    temp=ca.sqCentiToMeter(value);
+                    temp=ca.FerToKelvin(value);
                     break;
                 case 2:
                     temp=value;
-                    break;
-                case 3:
-                    temp=ca.sqKiloToMeter(value);
-                    break;
-                case 4:
-                    temp=ca.AcreToMeter(value);
-                    break;
-                case 5:
-                    temp=ca.HectareToMeter(value);
                     break;
             }
 
             switch (item2) {
                 case 0:
-                    temp= ca.sqMeterToMilli(temp);
+                    temp=ca.KelvinToCelsi(temp);
                     break;
                 case 1:
-                    temp= ca.sqMeterToCenti(temp);
-                    break;
-                case 3:
-                    temp= ca.sqMeterToKilo(temp);
-                    break;
-                case 4:
-                    temp= ca.sqMeterToAcre(temp);
-                    break;
-                case 5:
-                    temp= ca.sqMeterToHectare(temp);
+                    temp=ca.KelvinToFer(temp);
                     break;
             }
             return temp;

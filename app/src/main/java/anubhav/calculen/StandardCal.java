@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
-
 import com.fathzer.soft.javaluator.DoubleEvaluator;
+import anubhav.calculen.History.DBHelper;
+import anubhav.calculen.History.History;
 
 public class StandardCal extends AppCompatActivity {
     private EditText e1,e2;
@@ -36,58 +37,45 @@ public class StandardCal extends AppCompatActivity {
             case R.id.num0:
                 e2.setText(e2.getText()+"0");
                 break;
-
             case R.id.num1:
                 e2.setText(e2.getText()+"1");
                 break;
-
             case R.id.num2:
                 e2.setText(e2.getText()+"2");
                 break;
-
             case R.id.num3:
                 e2.setText(e2.getText()+"3");
                 break;
-
-
             case R.id.num4:
                 e2.setText(e2.getText()+"4");
                 break;
-
             case R.id.num5:
                 e2.setText(e2.getText()+"5");
                 break;
-
             case R.id.num6:
                 e2.setText(e2.getText()+"6");
                 break;
-
             case R.id.num7:
                 e2.setText(e2.getText()+"7");
                 break;
-
             case R.id.num8:
                 e2.setText(e2.getText()+"8");
                 break;
-
             case R.id.num9:
                 e2.setText(e2.getText()+"9");
                 break;
-
             case R.id.dot:
                 if(count==0 && e2.length()!=0) {
                     e2.setText(e2.getText()+".");
                     count++;
                 }
                 break;
-
             case R.id.clear:
                 e1.setText("");
                 e2.setText("");
                 count=0;
                 expression="";
                 break;
-
             case R.id.backSpace:
                 text=e2.getText().toString();
                 if(text.length()>0) {
@@ -127,37 +115,30 @@ public class StandardCal extends AppCompatActivity {
                     e2.setText(newText);
                 }
                 break;
-
             case R.id.plus:
                 operationClicked("+");
                 break;
-
             case R.id.minus:
                 operationClicked("-");
                 break;
-
             case R.id.divide:
                 operationClicked("/");
                 break;
-
             case R.id.multiply:
                 operationClicked("*");
                 break;
-
             case R.id.sqrt:
                 if(e2.length()!=0) {
                     text=e2.getText().toString();
                     e2.setText("sqrt(" + text + ")");
                 }
                 break;
-
             case R.id.square:
                 if(e2.length()!=0) {
                     text=e2.getText().toString();
                     e2.setText("("+text+")^2");
                 }
                 break;
-
             case R.id.posneg:
                 if(e2.length()!=0) {
                     String s=e2.getText().toString();
@@ -168,7 +149,6 @@ public class StandardCal extends AppCompatActivity {
                         e2.setText("-"+s);
                 }
                 break;
-
             case R.id.equal:
                 if(e2.length()!=0) {
                     text=e2.getText().toString();
@@ -192,17 +172,14 @@ public class StandardCal extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 break;
-
             case R.id.openBracket:
                 e1.setText(e1.getText()+"(");
                 break;
-
             case R.id.closeBracket:
                 e1.setText(e1.getText()+")");
                 break;
-
             case R.id.history:
-                Intent i=new Intent(this,History.class);
+                Intent i=new Intent(this, History.class);
                 i.putExtra("calcName","STANDARD");
                 startActivity(i);
                 break;

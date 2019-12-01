@@ -1,10 +1,12 @@
-package anubhav.calculen;
+package anubhav.calculen.UnitManagement;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import anubhav.calculen.R;
 
 public class UnitCoverter extends AppCompatActivity {
 
@@ -20,19 +22,19 @@ public class UnitCoverter extends AppCompatActivity {
         Intent i;
         switch(v.getId()) {
             case R.id.area:
-                i=new Intent(this,UnitArea.class);
+                i=new Intent(this, UnitArea.class);
                 startActivity(i);
                 break;
             case R.id.length:
-                i=new Intent(this,UnitLength.class);
+                i=new Intent(this, UnitLength.class);
                 startActivity(i);
                 break;
             case R.id.weight:
-                i=new Intent(this,UnitWeight.class);
+                i=new Intent(this, UnitWeight.class);
                 startActivity(i);
                 break;
             case R.id.tempearture:
-                i=new Intent(this,UnitTemperature.class);
+                i=new Intent(this, UnitTemperature.class);
                 startActivity(i);
                 break;
         }

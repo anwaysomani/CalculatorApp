@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anubhav.calculen.History;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
+import anubhav.calculen.R;
 
 public class History extends AppCompatActivity {
     private ListView lv;

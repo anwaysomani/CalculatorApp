@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anubhav.calculen.UnitManagement;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,16 +7,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class UnitWeight extends AppCompatActivity {
+import anubhav.calculen.ConvertingUnits;
+import anubhav.calculen.R;
+
+public class UnitArea extends AppCompatActivity {
     private EditText e1,e2;
     private Spinner s1,s2;
     private int count1=0;
-    private ConvertingUnits.Weight ca;
+    private ConvertingUnits.Area ca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_unit_weight);
+        setContentView(R.layout.activity_unit_area);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -25,7 +28,7 @@ public class UnitWeight extends AppCompatActivity {
         s1=(Spinner)findViewById(R.id.spinner1);
         s2=(Spinner)findViewById(R.id.spinner2);
 
-        ca=new ConvertingUnits.Weight();
+        ca=new ConvertingUnits.Area();
     }
 
     public void onClick(View v) {
@@ -66,13 +69,11 @@ public class UnitWeight extends AppCompatActivity {
                     count1++;
                 }
                 break;
-
             case R.id.clear:
                 e1.setText("");
                 e2.setText("");
                 count1=0;
                 break;
-
             case R.id.backSpace:
                 if(e1.length()!=0) {
                     String text=e1.getText().toString();
@@ -82,7 +83,6 @@ public class UnitWeight extends AppCompatActivity {
                     e1.setText(newText);
                 }
                 break;
-
             case R.id.equal:
                 int item1=s1.getSelectedItemPosition();
                 int item2=s2.getSelectedItemPosition();
@@ -100,52 +100,40 @@ public class UnitWeight extends AppCompatActivity {
         else {
             switch (item1) {
                 case 0:
-                    temp=ca.MilliToKilo(value);
+                    temp=ca.sqMilliToMeter(value);
                     break;
                 case 1:
-                    temp=ca.CentiToKilo(value);
+                    temp=ca.sqCentiToMeter(value);
                     break;
                 case 2:
-                    temp=ca.DeciToKilo(value);
-                    break;
-                case 3:
-                    temp=ca.GramToKilo(value);
-                    break;
-                case 4:
                     temp=value;
                     break;
+                case 3:
+                    temp=ca.sqKiloToMeter(value);
+                    break;
+                case 4:
+                    temp=ca.AcreToMeter(value);
+                    break;
                 case 5:
-                    temp=ca.MetricTonnesToKilo(value);
-                    break;
-                case 6:
-                    temp=ca.PoundsToKilo(value);
-                    break;
-                case 7:
-                    temp=ca.OuncesToKilo(value);
+                    temp=ca.HectareToMeter(value);
                     break;
             }
 
             switch (item2) {
                 case 0:
-                    temp=ca.KiloToMilli(temp);
+                    temp= ca.sqMeterToMilli(temp);
                     break;
                 case 1:
-                    temp=ca.KiloToCenti(temp);
-                    break;
-                case 2:
-                    temp=ca.KiloToDeci(temp);
+                    temp= ca.sqMeterToCenti(temp);
                     break;
                 case 3:
-                    temp=ca.KiloToGram(temp);
+                    temp= ca.sqMeterToKilo(temp);
+                    break;
+                case 4:
+                    temp= ca.sqMeterToAcre(temp);
                     break;
                 case 5:
-                    temp=ca.KiloToMetricTonnes(temp);
-                    break;
-                case 6:
-                    temp=ca.KiloToPounds(temp);
-                    break;
-                case 7:
-                    temp=ca.KiloToOunces(temp);
+                    temp= ca.sqMeterToHectare(temp);
                     break;
             }
             return temp;

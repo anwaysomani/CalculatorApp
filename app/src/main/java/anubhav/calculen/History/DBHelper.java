@@ -1,4 +1,4 @@
-package anubhav.calculen;
+package anubhav.calculen.History;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String database_Name="HISTORY.DB";
+    private static final String database_Name="history.db";
     private static final int database_Version=1;
     private static final String TAG="DATABASE OPERATIONS";
     private static final String table_Name="history";

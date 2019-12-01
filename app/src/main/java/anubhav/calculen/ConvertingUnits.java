@@ -8,7 +8,7 @@ package anubhav.calculen;
 public class ConvertingUnits
 {
     //class to convert units of area
-    static class Area{
+    public static class Area{
         public double sqMilliToMeter(double milli)
         {
             return (milli/1000000);
@@ -61,7 +61,7 @@ public class ConvertingUnits
     }
 
     //class to convert units of length
-    static class Length{
+    public static class Length{
         public double MilliToMeter(double milli)
         {
             return (milli/1000);
@@ -145,7 +145,7 @@ public class ConvertingUnits
     }
 
     //class to convert units of temperature
-    static class Temperature{
+    public static class Temperature{
         public double FerToKelvin(double fer)
         {
             return ((fer+459.67)*5/9);
@@ -168,7 +168,7 @@ public class ConvertingUnits
     }
 
     //class to convert units of mass/weight
-    static class Weight
+    public static class Weight
     {
         public double MilliToKilo(double milli)
         {

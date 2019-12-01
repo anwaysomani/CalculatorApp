@@ -5,8 +5,7 @@ import com.fathzer.soft.javaluator.DoubleEvaluator;
 import com.fathzer.soft.javaluator.Function;
 import com.fathzer.soft.javaluator.Parameters;
 
-/** A subclass of DoubleEvaluator that supports SQRT function.
- */
+// A subclass of DoubleEvaluator that supports SQRT function.
 public class ExtendedDoubleEvaluator extends DoubleEvaluator {
     /** Defines the new function (square root).*/
     private static final Function SQRT = new Function("sqrt", 1);
@@ -27,7 +26,7 @@ public class ExtendedDoubleEvaluator extends DoubleEvaluator {
         PARAMS.add(ATAND);
     }
 
-    public ExtendedDoubleEvaluator() {
+    ExtendedDoubleEvaluator() {
         super(PARAMS);
     }
 
