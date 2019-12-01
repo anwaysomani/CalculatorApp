@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CalculatorApp</string>
+    <string name="app_name">Calculen</string>
     <string name="action_settings">Settings</string>
     <string name="stdCal">Standard Calculator</string>
     <string name="sciCal">Scientific Calculator</string>
@@ -55,7 +55,7 @@
 
     <string-array name="temperature">
         <item>Celsius</item>
-        <item>Farenheit</item>
+        <item>Fahrenheit</item>
         <item>Kelvin</item>
     </string-array>
 
