@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="anubhav.calculatorapp">
+    package="anubhav.calculen">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="anubhav.calculen.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,35 +19,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StandardCal"
+            android:name="anubhav.calculen.StandardCal"
             android:label="@string/title_activity_standard_cal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ScientificCal"
+            android:name="anubhav.calculen.ScientificCal"
             android:label="@string/title_activity_scientific_cal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UnitCoverter"
+            android:name="anubhav.calculen.UnitCoverter"
             android:label="@string/title_activity_unit_coverter"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UnitArea"
+            android:name="anubhav.calculen.UnitArea"
             android:label="@string/title_activity_unit_area"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UnitLength"
+            android:name="anubhav.calculen.UnitLength"
             android:label="@string/title_activity_unit_length"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UnitWeight"
+            android:name="anubhav.calculen.UnitWeight"
             android:label="@string/title_activity_unit_weight"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UnitTemperature"
+            android:name="anubhav.calculen.UnitTemperature"
             android:label="@string/title_activity_unit_temperature"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".History"
+            android:name="anubhav.calculen.History"
             android:label="@string/title_activity_history"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
