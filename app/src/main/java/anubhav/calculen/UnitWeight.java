@@ -8,11 +8,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 public class UnitWeight extends AppCompatActivity {
-
     private EditText e1,e2;
     private Spinner s1,s2;
     private int count1=0;
     private ConvertingUnits.Weight ca;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,53 +28,40 @@ public class UnitWeight extends AppCompatActivity {
         ca=new ConvertingUnits.Weight();
     }
 
-    public void onClick(View v)
-    {
-        switch(v.getId())
-        {
+    public void onClick(View v) {
+        switch(v.getId()) {
             case R.id.num0:
                 e1.setText(e1.getText()+"0");
                 break;
-
             case R.id.num1:
                 e1.setText(e1.getText()+"1");
                 break;
-
             case R.id.num2:
                 e1.setText(e1.getText()+"2");
                 break;
-
             case R.id.num3:
                 e1.setText(e1.getText()+"3");
                 break;
-
             case R.id.num4:
                 e1.setText(e1.getText()+"4");
                 break;
-
             case R.id.num5:
                 e1.setText(e1.getText()+"5");
                 break;
-
             case R.id.num6:
                 e1.setText(e1.getText()+"6");
                 break;
-
             case R.id.num7:
                 e1.setText(e1.getText()+"7");
                 break;
-
             case R.id.num8:
                 e1.setText(e1.getText()+"8");
                 break;
-
             case R.id.num9:
                 e1.setText(e1.getText()+"9");
                 break;
-
             case R.id.dot:
-                if (count1==0)
-                {
+                if (count1==0) {
                     e1.setText(e1.getText()+".");
                     count1++;
                 }
@@ -87,8 +74,7 @@ public class UnitWeight extends AppCompatActivity {
                 break;
 
             case R.id.backSpace:
-                if(e1.length()!=0)
-                {
+                if(e1.length()!=0) {
                     String text=e1.getText().toString();
                     if(text.endsWith("."))
                         count1=0;
@@ -107,15 +93,12 @@ public class UnitWeight extends AppCompatActivity {
         }
     }
 
-    public double evaluate(int item1,int item2,double value)
-    {
+    public double evaluate(int item1,int item2,double value) {
         double temp=0.0;
         if(item1==item2)
             return value;
-        else
-        {
-            switch (item1)
-            {
+        else {
+            switch (item1) {
                 case 0:
                     temp=ca.MilliToKilo(value);
                     break;
@@ -142,8 +125,7 @@ public class UnitWeight extends AppCompatActivity {
                     break;
             }
 
-            switch (item2)
-            {
+            switch (item2) {
                 case 0:
                     temp=ca.KiloToMilli(temp);
                     break;

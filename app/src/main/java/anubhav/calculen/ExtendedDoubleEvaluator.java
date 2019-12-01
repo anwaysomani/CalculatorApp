@@ -1,11 +1,6 @@
 package anubhav.calculen;
 
-/**
- * Created by Anubhav on 13-03-2016.
- */
-
 import java.util.Iterator;
-
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 import com.fathzer.soft.javaluator.Function;
 import com.fathzer.soft.javaluator.Parameters;
@@ -41,24 +36,15 @@ public class ExtendedDoubleEvaluator extends DoubleEvaluator {
         if (function == SQRT) {
             // Implements the new function
             return Math.sqrt(arguments.next());
-        }
-        else if(function == CBRT)
-        {
+        } else if(function == CBRT) {
             return Math.cbrt(arguments.next());
-        }
-        else if(function == ASIND)
-        {
+        } else if(function == ASIND) {
             return Math.toDegrees(Math.asin(arguments.next()));
-        }
-        else if(function == ACOSD)
-        {
+        } else if(function == ACOSD) {
             return Math.toDegrees(Math.acos(arguments.next()));
-        }
-        else if(function == ATAND)
-        {
+        } else if(function == ATAND) {
             return Math.toDegrees(Math.atan(arguments.next()));
-        }
-        else {
+        } else {
             // If it's another function, pass it to DoubleEvaluator
             return super.evaluate(function, arguments, evaluationContext);
         }

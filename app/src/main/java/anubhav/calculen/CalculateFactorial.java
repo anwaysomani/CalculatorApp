@@ -1,8 +1,5 @@
 package anubhav.calculen;
 
-/**
- * Created by Anubhav on 14-03-2016.
- */
 public class CalculateFactorial
 {
     public static final int MAX=1000;

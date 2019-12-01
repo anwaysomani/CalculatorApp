@@ -6,11 +6,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class History extends AppCompatActivity {
-
     private ListView lv;
     private DBHelper dbHelper;
     private ArrayList<String> list;
@@ -36,8 +34,7 @@ public class History extends AppCompatActivity {
         lv.setAdapter(adapter);
     }
 
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         dbHelper.deleteRecords(calcName);
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,EmptyList);
         lv.setAdapter(adapter);

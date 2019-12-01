@@ -16,29 +16,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
     }
 
-    public void onClick(View view)
-    {
+    public void onClick(View view) {
         Intent i;
-        if(view.getId()==R.id.button1)
-        {
+        if(view.getId()==R.id.button1) {
             i=new Intent(this,StandardCal.class);
             startActivity(i);
-        }
-        else if(view.getId()==R.id.button)
-        {
+        } else if(view.getId()==R.id.button) {
             i=new Intent(this,ScientificCal.class);
             startActivity(i);
-        }
-        else if(view.getId()==R.id.button2)
-        {
+        } else if(view.getId()==R.id.button2) {
             i=new Intent(this,UnitCoverter.class);
             startActivity(i);
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

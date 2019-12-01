@@ -14,14 +14,11 @@ public class UnitCoverter extends AppCompatActivity {
         setContentView(R.layout.activity_unit_coverter);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         Intent i;
-        switch(v.getId())
-        {
+        switch(v.getId()) {
             case R.id.area:
                 i=new Intent(this,UnitArea.class);
                 startActivity(i);

@@ -10,13 +10,13 @@ import android.widget.EditText;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 public class StandardCal extends AppCompatActivity {
-
     private EditText e1,e2;
     private int count=0;
     private String expression="";
     private String text="";
     private Double result=0.0;
     private DBHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +31,8 @@ public class StandardCal extends AppCompatActivity {
         e2.setText("0");
     }
 
-    public void onClick(View v)
-    {
-        switch(v.getId())
-        {
+    public void onClick(View v) {
+        switch(v.getId()) {
             case R.id.num0:
                 e2.setText(e2.getText()+"0");
                 break;
@@ -77,8 +75,7 @@ public class StandardCal extends AppCompatActivity {
                 break;
 
             case R.id.dot:
-                if(count==0 && e2.length()!=0)
-                {
+                if(count==0 && e2.length()!=0) {
                     e2.setText(e2.getText()+".");
                     count++;
                 }
@@ -93,38 +90,28 @@ public class StandardCal extends AppCompatActivity {
 
             case R.id.backSpace:
                 text=e2.getText().toString();
-                if(text.length()>0)
-                {
-                    if(text.endsWith("."))
-                    {
+                if(text.length()>0) {
+                    if(text.endsWith(".")) {
                         count=0;
                     }
                     String newText=text.substring(0,text.length()-1);
                     //to delete the data contained in the brackets at once
-                    if(text.endsWith(")"))
-                    {
+                    if(text.endsWith(")")) {
                         char []a=text.toCharArray();
                         int pos=a.length-2;
                         int counter=1;
                         //to find the opening bracket position
-                        for(int i=a.length-2;i>=0;i--)
-                        {
-                            if(a[i]==')')
-                            {
+                        for(int i=a.length-2;i>=0;i--) {
+                            if(a[i]==')') {
                                 counter++;
-                            }
-                            else if(a[i]=='(')
-                            {
+                            } else if(a[i]=='(') {
                                 counter--;
-                            }
-                            //if decimal is deleted b/w brackets then count should be zero
-                            else if(a[i]=='.')
-                            {
+                            } else if(a[i]=='.') {
+                                //if decimal is deleted b/w brackets then count should be zero
                                 count=0;
                             }
                             //if opening bracket pair for the last bracket is found
-                            if(counter==0)
-                            {
+                            if(counter==0) {
                                 pos=i;
                                 break;
                             }
@@ -132,14 +119,11 @@ public class StandardCal extends AppCompatActivity {
                         newText=text.substring(0,pos);
                     }
                     //if e2 edit text contains only - sign or sqrt at last then clear the edit text e2
-                    if(newText.equals("-")||newText.endsWith("sqrt"))
-                    {
+                    if(newText.equals("-")||newText.endsWith("sqrt")) {
                         newText="";
-                    }
-                    //if pow sign is left at the last
-                    else if(newText.endsWith("^"))
+                    } else if(newText.endsWith("^"))
+                        //if pow sign is left at the last
                         newText=newText.substring(0,newText.length()-1);
-
                     e2.setText(newText);
                 }
                 break;
@@ -161,24 +145,21 @@ public class StandardCal extends AppCompatActivity {
                 break;
 
             case R.id.sqrt:
-                if(e2.length()!=0)
-                {
+                if(e2.length()!=0) {
                     text=e2.getText().toString();
                     e2.setText("sqrt(" + text + ")");
                 }
                 break;
 
             case R.id.square:
-                if(e2.length()!=0)
-                {
+                if(e2.length()!=0) {
                     text=e2.getText().toString();
                     e2.setText("("+text+")^2");
                 }
                 break;
 
             case R.id.posneg:
-                if(e2.length()!=0)
-                {
+                if(e2.length()!=0) {
                     String s=e2.getText().toString();
                     char arr[]=s.toCharArray();
                     if(arr[0]=='-')
@@ -189,10 +170,7 @@ public class StandardCal extends AppCompatActivity {
                 break;
 
             case R.id.equal:
-                /*for more knowledge on DoubleEvaluator and its tutorial go to the below link
-                http://javaluator.sourceforge.net/en/home/*/
-                if(e2.length()!=0)
-                {
+                if(e2.length()!=0) {
                     text=e2.getText().toString();
                     expression=e1.getText().toString()+text;
                 }
@@ -200,17 +178,14 @@ public class StandardCal extends AppCompatActivity {
                 if(expression.length()==0)
                     expression="0.0";
                 DoubleEvaluator evaluator = new DoubleEvaluator();
-                try
-                {
+                try {
                     //evaluate the expression
                     result=new ExtendedDoubleEvaluator().evaluate(expression);
                     //insert expression and result in sqlite database if expression is valid and not 0.0
                     if(!expression.equals("0.0"))
                         dbHelper.insert("STANDARD",expression+" = "+result);
                     e2.setText(result+"");
-                }
-                catch (Exception e)
-                {
+                } catch (Exception e) {
                     e2.setText("Invalid Expression");
                     e1.setText("");
                     expression="";
@@ -234,20 +209,15 @@ public class StandardCal extends AppCompatActivity {
         }
     }
 
-    private void operationClicked(String op)
-    {
-        if(e2.length()!=0)
-        {
+    private void operationClicked(String op) {
+        if(e2.length()!=0) {
             String text=e2.getText().toString();
             e1.setText(e1.getText() + text+op);
             e2.setText("");
             count=0;
-        }
-        else
-        {
+        } else {
             String text=e1.getText().toString();
-            if(text.length()>0)
-            {
+            if(text.length()>0) {
                 String newText=text.substring(0,text.length()-1)+op;
                 e1.setText(newText);
             }

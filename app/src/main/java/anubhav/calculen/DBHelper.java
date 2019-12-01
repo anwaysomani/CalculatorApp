@@ -6,14 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import java.util.ArrayList;
 
-/**
- * Created by Anubhav on 13-03-2016.
- */
 public class DBHelper extends SQLiteOpenHelper {
-
     private static final String database_Name="HISTORY.DB";
     private static final int database_Version=1;
     private static final String TAG="DATABASE OPERATIONS";
@@ -34,8 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.i(TAG,"Table Created");
     }
 
-    public void insert(String calcName,String expression)
-    {
+    public void insert(String calcName,String expression) {
         db=getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(column1,calcName);
@@ -44,35 +38,30 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList<String> showHistory(String calcName)
-    {
+    public ArrayList<String> showHistory(String calcName) {
         db=getReadableDatabase();
         Cursor cursor;
         ArrayList<String> list=new ArrayList<String>();
         String []selectionArgs={calcName};
         //cursor=db.query(table_Name,columns,column1+" LIKE ?",selectionArgs,null,null,null);
         cursor=db.rawQuery("select * from "+table_Name+" where "+column1+" = ?",selectionArgs);
-        if(cursor.moveToFirst())
-        {
-            do
-            {
+        if(cursor.moveToFirst()) {
+            do {
                 String expression=cursor.getString(1);
                 list.add(expression);
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         db.close();
         return list;
     }
 
-    public void deleteRecords(String calcName)
-    {
+    public void deleteRecords(String calcName) {
         db=getWritableDatabase();
         String value[]={calcName};
         int i=db.delete(table_Name, column1+"=?", value);
         db.close();
     }
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-    }
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { }
 }
